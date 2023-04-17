@@ -1,18 +1,15 @@
 import React from 'react';
-
-import CreditCardInfo from '../components/CreditCardInfo/CreditCardInfo';
+import Login from '../components/Login/Login';
 import Navbar from "../components/Navbar/Navbar";
 
 
-
-function Credit(){
+function LoginPage(){
     return(
         <div>
         <Navbar/>
-        <CreditCardInfo/>
-       
+        <Login/>
         </div>
         )
     }
 
-    export default Credit;
+    export default LoginPage;

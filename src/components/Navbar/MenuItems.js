@@ -34,6 +34,11 @@ export const MenuItems = [
         url: '/homeconnect/sell',
         cName: 'nav-links'
     }, 
+    {
+    title: 'Log In',
+    url: '/homeconnect/login',
+    cName: 'nav-links-mobile' //This is for mobile
+},
     
  
     

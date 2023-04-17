@@ -3,24 +3,28 @@ import './SellHouse.css';
 
 function SellHouseForm(){
     const [formData, setFormData] = useState({
-        username: 'default',
-        email: 'default@gmail.com',
-        occupation: 'student',
-        gender: 'male',
-        languages: ['html'],
+        address: '',
+        description: '',
+        // occupation: '',
+        askingPrice: '',
+        floors: '',
+        bedrooms: '',
+        bathrooms: '',
+        condition: '',
+        amenities: [],
       })
     
       const onChangeHandler = (event) => {
     
         console.log(event)
-        if (event.target.name === 'languages') {
+        if (event.target.name === 'amenities') {
     
           let copy = { ...formData }
     
           if (event.target.checked) {
-            copy.languages.push(event.target.value)
+            copy.amenities.push(event.target.value)
           } else {
-            copy.languages = copy.languages.filter(el => el !== event.target.value)
+            copy.amenities = copy.amenities.filter(el => el !== event.target.value)
           }
     
           setFormData(copy)
@@ -42,62 +46,144 @@ function SellHouseForm(){
         <div className="sell-house-main">
           <h1 className='sell-house-title'>Sell House</h1>
           <form onSubmit={onSubmitHandler}>
-            <div className="form-group">
-              <label htmlFor="username" className="form-label">User Name</label>
-              <input className="form-control" name="username" onChange={onChangeHandler} value={formData.username} />
+
+            <div className="sellform-group">
+              <label htmlFor="address" className="sellform-label">House Address</label>
+              <input className="sellform-control" name="address" onChange={onChangeHandler} value={formData.address} />
             </div>
-            <div className="form-group">
-              <label htmlFor="email" className="form-label">Email</label>
-              <input className="form-control" name="email" onChange={onChangeHandler} value={formData.email} />
+
+            <div className="sellform-group">
+              <label htmlFor="description" className="sellform-label">Description</label>
+              <input className="description-box" name="description" onChange={onChangeHandler} value={formData.description} />
             </div>
-            <div className="form-group">
-              <label htmlFor="occupation" className="form-label">Occupation</label>
-              <select className="form-select" name="occupation" onChange={onChangeHandler} value={formData.occupation}>
+
+            <div className="sellform-group">
+              <label htmlFor="askingPrice" className="sellform-label">Asking Price</label>
+              <input className="sellform-control" name="askingPrice" onChange={onChangeHandler} value={formData.askingPrice} />
+            </div>
+
+            {/* <div className="sellform-group">
+              <label htmlFor="occupation" className="sellform-label">Occupation</label>
+              <select className="sellform-select" name="occupation" onChange={onChangeHandler} value={formData.occupation}>
                 <option value="student">Student</option>
                 <option value="employee">Employee</option>
                 <option value="other">Other</option>
               </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="gender" className="form-label">Gender</label>
+            </div> */}
+
+            {/* Floors */}
+            <div className="sellform-group">
+              <label htmlFor="floors" className="sellform-label">Floors</label>
               <div>
                 <div>
-                  <input type="radio" name="gender" value="male" onChange={onChangeHandler} checked={formData.gender === 'male'} />
-                  <label htmlFor="male">Male</label>
+                  <input type="radio" name="floors" value="1" onChange={onChangeHandler} checked={formData.floors === '1'} />
+                  <label htmlFor="1">1</label>
                 </div>
                 <div>
-                  <input type="radio" name="gender" value="female" onChange={onChangeHandler} checked={formData.gender === 'female'} />
-                  <label htmlFor="female">Female</label>
+                  <input type="radio" name="floors" value="2" onChange={onChangeHandler} checked={formData.floors === '2'} />
+                  <label htmlFor="2">2</label>
                 </div>
                 <div>
-                  <input type="radio" name="gender" value="other" onChange={onChangeHandler} checked={formData.gender === 'other'} />
-                  <label htmlFor="other">Other</label>
+                  <input type="radio" name="floors" value="3" onChange={onChangeHandler} checked={formData.floors === '3'} />
+                  <label htmlFor="3">3</label>
+                </div>
+                <div>
+                  <input type="radio" name="floors" value="4" onChange={onChangeHandler} checked={formData.floors === '4'} />
+                  <label htmlFor="4">4</label>
                 </div>
               </div>
             </div>
-            <div className="form-group">
-              <label htmlFor="gender" className="form-label">Languages</label>
+
+            {/* Bedrooms */}
+            <div className="sellform-group">
+              <label htmlFor="bedrooms" className="sellform-label">Bedrooms</label>
               <div>
-                <div>
-                  <input type="checkbox" name="languages" value="html" onChange={onChangeHandler} checked={formData.languages.indexOf('html') !== -1} />
-                  <label htmlFor="html">HTML</label>
+              <div>
+                  <input type="radio" name="bedrooms" value="1" onChange={onChangeHandler} checked={formData.bedrooms === '1'} />
+                  <label htmlFor="1">1</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="languages" value="css" onChange={onChangeHandler} checked={formData.languages.indexOf('css') !== -1} />
-                  <label htmlFor="css">CSS</label>
+                  <input type="radio" name="bedrooms" value="2" onChange={onChangeHandler} checked={formData.bedrooms === '2'} />
+                  <label htmlFor="2">2</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="languages" value="javascript" onChange={onChangeHandler} checked={formData.languages.indexOf('javascript') !== -1} />
-                  <label htmlFor="javascript">Javascript</label>
+                  <input type="radio" name="bedrooms" value="3" onChange={onChangeHandler} checked={formData.bedrooms === '3'} />
+                  <label htmlFor="3">3</label>
+                </div>
+                <div>
+                  <input type="radio" name="bedrooms" value="4" onChange={onChangeHandler} checked={formData.bedrooms === '4'} />
+                  <label htmlFor="4">4</label>
                 </div>
               </div>
             </div>
-            <div className="form-group">
-              <button className="sell-btn" type="submit" >Submit</button>
-              <p></p>
+
+
+            {/* Bathrooms */}
+            <div className="sellform-group">
+              <label htmlFor="bathrooms" className="sellform-label">Bathrooms</label>
+              <div>
+              <div>
+                  <input type="radio" name="bathrooms" value="1" onChange={onChangeHandler} checked={formData.bathrooms === '1'} />
+                  <label htmlFor="1">1</label>
+                </div>
+                <div>
+                  <input type="radio" name="bathrooms" value="2" onChange={onChangeHandler} checked={formData.bathrooms === '2'} />
+                  <label htmlFor="2">2</label>
+                </div>
+                <div>
+                  <input type="radio" name="bathrooms" value="3" onChange={onChangeHandler} checked={formData.bathrooms === '3'} />
+                  <label htmlFor="3">3</label>
+                </div>
+                <div>
+                  <input type="radio" name="bathrooms" value="4" onChange={onChangeHandler} checked={formData.bathrooms === '4'} />
+                  <label htmlFor="4">4</label>
+                </div>
+              </div>
+            </div>
+
+
+            {/* Condition */}
+            <div className="sellform-group">
+              <label htmlFor="condition" className="sellform-label">Condition</label>
+              <div>
+              <div>
+                  <input type="radio" name="condition" value="1" onChange={onChangeHandler} checked={formData.condition === '1'} />
+                  <label htmlFor="1">Good</label>
+                </div>
+                <div>
+                  <input type="radio" name="condition" value="0" onChange={onChangeHandler} checked={formData.condition === '0'} />
+                  <label htmlFor="0">Bad</label>
+                </div>
+               
+              </div>
+            </div>
+
+
+
+
+            {/* Amenities */}
+            <div className="sellform-group">
+              <label htmlFor="gender" className="sellform-label">Amenities</label>
+              <div>
+                <div>
+                  <input type="checkbox" name="amenities" value="waterfront" onChange={onChangeHandler} checked={formData.amenities.indexOf('waterfront') !== -1} />
+                  <label htmlFor="waterfront">Waterfront</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="amenities" value="view" onChange={onChangeHandler} checked={formData.amenities.indexOf('view') !== -1} />
+                  <label htmlFor="view">View</label>
+                </div>
+             
+              </div>
+            </div>
+
+
+
+            <div className="sellform-group">
               <button className="price-recom-btn" type="submit" >Get Recommended Price</button>
               <p></p>
-              <button className="reqvisit-btn" type="submit" >Request Visit</button>
+              <button className="sell-btn" type="submit" >Submit and Request Visit from Company</button>
+              <p></p>
             </div>
           </form>
          </div>

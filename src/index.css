@@ -1,16 +1,11 @@
-:root{
-  --primary: #3acbf7;
-}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 html {
   font-family: "Montserrat", sans-serif;
-}
-body {
-  background: #eee;
 }
 
 
@@ -33,24 +28,27 @@ footer p {
 }
 
 .btn{
-  color: #ffff;
-  height: 33%;
-  width: 15%;
+  height: 48px;
+  width: 180px;
   text-decoration: none;
-  font-size: 20px;
-  padding: 7px 16px;
-  border-radius: 19px;
+  font-size: 1.15em;
+  font-weight: 650;
+  padding: 8px 20px;
+  border-radius: 4px;
   outline: none;
   border: none;
   cursor: pointer;
-  background-color: #24262b;
+  background: #3acbf7;
+  color: #24262b;
+  margin-right: 8px;
 }
 
 .btn:hover{
   padding: 8px 20px;
   transition: all 0.3s ease-out;
   background: #ffff;
-  color:#24262b;
+  color:#6568F4;
   transition: 250ms;
 }
+
 

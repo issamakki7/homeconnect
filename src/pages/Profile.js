@@ -3,13 +3,14 @@ import ProfileCard from '../components/Profile/ProfileCard';
 import YourHousesTable from '../components/Profile/YourHousesTable';
 import YourBidsTable from '../components/Profile/YourBidsTable';
 import YourVisitRequestsTable from '../components/Profile/YourVisitRequestsTable';
+import Navbar from "../components/Navbar/Navbar";
 
 
 function Profile(){
    
     return(
       <div>
-        
+        <Navbar/>
         <div className='profile-page' >
         <ProfileCard/>
         <YourHousesTable/>

@@ -6,9 +6,11 @@ import Browse from '../components/Browse/Browse';
 import RoomBuilder from '../components/RoomBuilder/RoomBuilder';
 import CreditCardInfo from '../components/CreditCardInfo/CreditCardInfo';
 
+
 function Home(){
     return(
         <div>
+        <Navbar/>
         <Hero/>
         <Browse/>
         <RoomBuilder/>

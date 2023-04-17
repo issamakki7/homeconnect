@@ -1,19 +1,18 @@
-.navbarItems{
+.adminnavbarItems{
     background: #24262b;
     height: 80px;
     display: flex;
-    justify-content: center ;
-    align-items: center ;
+    justify-content: center;
+    align-items: center;
     font-size: 1.2rem;
 }
 
 
-.navbar-logo{
+.adminnavbar-logo{
     color:#ffff;
-    margin-left: 17px;
-    width: 40%;
+    justify-self: start;
+    margin-left: 20px;
     cursor: pointer;
-    font-size: 1.63em;
 }
 
 .fa-react{
@@ -24,18 +23,18 @@
 .nav-menu{
     display: grid;
     grid-template-columns: repeat(5,auto);
-    grid-gap: 20px;
+    grid-gap: 10px;
     list-style: none;
-    text-align: right;
-    width: 80vw;
-    justify-content:right ;
-    margin-right: 1.7rem;
+    text-align: center;
+    width: 70vw;
+    justify-content: end;
+    margin-right: 0.1rem;
 }
 
 .nav-links{
     color: white;
     text-decoration: none;
-    padding: 0.5rem 1.3rem;
+    padding: 0.5rem 1rem;
 }
 
 .nav-links:hover{
@@ -53,14 +52,9 @@
     display: none;
 }
 
-.menu-icon{
+.adminmenu-icon{
     display: none;
 }
-
-
-
-  
-  
 
 /* Implementing media queries for mobile */
 
@@ -73,7 +67,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 700px;
+        height: 500px;
         position: absolute;
         top: 80px;
         left: -100%;
@@ -147,7 +141,6 @@
         display:none;
     }
 }
-
 
 
 
